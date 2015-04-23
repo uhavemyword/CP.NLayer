@@ -1,0 +1,2 @@
+﻿--ALTER TABLE [User] ADD CONSTRAINT uc_Name UNIQUE([Name])
+--GO

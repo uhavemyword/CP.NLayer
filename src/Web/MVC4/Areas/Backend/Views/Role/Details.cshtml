@@ -1,0 +1,57 @@
+﻿@model RoleEditModel
+@{
+    var action = Html.ActionName();
+    ViewBag.Title = Localizer.GetString(action, typeof(UiResources)) + " " + UiResources.Role;
+}
+<div id="userForm" class="span-16 @action-from">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    if (!action.EqualsOp(Operation.Create))
+    {
+        @Html.HiddenFor(x => x.Target.Id)
+        @Html.HiddenFor(x => x.Target.RowVersion)
+    }
+    if (action.EqualsOp(Operation.Delete))
+    {
+        @HtmlElements.UiMessage("highlight", "info", UiResources.Warning_DeleteConfirmation);
+    }
+
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@UiResources.Role</legend>
+        <table class="details">
+            <tbody>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.Name)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.Description)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.Description)</td>
+            </tr>
+            <tr>
+                <td>@UiResources.PermissionList</td>
+                <td>
+                    <table>
+                        <tr>
+                        @for (int i = 0; i < Model.PermissionList.Count(); i++)
+                        {
+                            <td>
+                                @Html.DisplayOrEditorFor(x => x.PermissionList[i])
+                            </td>
+                            if (i % 3 == 2)
+                            {
+                                @:</tr><tr>
+                            }
+                        }
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    @Html.RenderSubmit()
+}
+</div>

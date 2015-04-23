@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:CP.NLayer.Client.WpfClient.Common">
+
+    <c:DebugConverter x:Key="DebugConverter" />
+    <c:AdornedElementToErrorConverter x:Key="AdornedElementToErrorConverter" />
+    <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+    <c:ValidationResultsToStringConverter x:Key="ValidationResultsToStringConverter" />
+    <c:ValidationResultsToVisibilityConverter x:Key="ValidationResultsToVisibilityConverter" />
+    <c:BooleanOrConverter x:Key="BooleanOrConverter" />
+    <c:IsDialogToVisibilityConverter x:Key="IsDialogToVisibilityConverter" />
+    <c:StringToColorConverter x:Key="StringToColorConverter" />
+    <c:EditionToBooleanConverter x:Key="EditionToBooleanConverter" />
+</ResourceDictionary>

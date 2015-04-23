@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="CP.NLayer.Client.WpfClient.Modules.MainHeader.Login.View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="clr-namespace:CP.NLayer.Client.WpfClient.Common;assembly=CP.NLayer.Client.WpfClient.Common"
+             xmlns:l="http://wpflocalizeextension.codeplex.com"
+             l:ResxLocalizationProvider.DefaultAssembly="CP.NLayer.Resources" l:ResxLocalizationProvider.DefaultDictionary="MResources"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+
+    <c:MyBusyIndicator BusyContent="{Binding BusyModel.BusyContent}" IsBusy="{Binding BusyModel.IsBusy}"
+                              IsIndeterminate="{Binding BusyModel.IsIndeterminate}" DisplayAfter="{Binding BusyModel.DisplayAfter}" MinWidth="300" MinHeight="150">
+        <StackPanel>
+            <c:ValidationMessageControl />
+            <Grid Width="230" Margin="20">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Right" />
+                    </Style>
+
+                    <Style TargetType="TextBox">
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="12" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="12" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="{l:Loc UserName}" />
+                <TextBlock Text="{l:Loc Password}" Grid.Row="2" />
+                <TextBlock Text="{l:Loc Language}" Grid.Row="4" />
+                <TextBox Name="textBox1" Grid.Column="2" Text="{Binding LoginModel.UserName, Mode=OneWayToSource}" />
+                <!--"Bind" Password using event-->
+                <PasswordBox Name="passwordBox1" Grid.Row="2" Grid.Column="2" PasswordChanged="PasswordBox1_PasswordChanged" />
+                <Grid Grid.Row="4" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="10*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox ItemsSource="{Binding SupportedCultures}" SelectedValuePath="Name" DisplayMemberPath="NativeName" SelectedItem="{Binding SelectedCulture}" />
+                    <Button Content="{l:Loc Login, Dict=UiResources}" Name="button1" Grid.Row="0"  Grid.Column="2"  Command="{Binding LoginCommand}" IsDefault="True" />
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </c:MyBusyIndicator>
+</UserControl>

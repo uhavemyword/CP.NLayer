@@ -1,0 +1,24 @@
+﻿@using System;
+@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2>
+        @if (!string.IsNullOrEmpty(Model))
+        {
+            @Model
+        }
+        else
+        {
+            <text>Sorry, an error occurred while processing your request.</text>
+        }
+    </h2>
+</body>
+</html>

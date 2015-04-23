@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--The MergedDictionaries will be reset in runtime (GlobalCommands.ApplyTheme). However, we need them here to support design time.-->
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Common;component/Resources.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Generic.xaml" />
+
+        <!-- Telerik.Windows.Controls is used by all assemblies -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/System.Windows.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Input.xaml" />
+
+        <!-- Requires: System.Windows.xaml -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Navigation.xaml" />
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Chart.xaml" />-->
+
+        <!-- Requires: Telerik.Windows.Controls.Input -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Data.xaml" />
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.DataVisualization.xaml" />-->
+
+        <!-- Requires: Telerik.Windows.Controls.Navigation -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Docking.xaml" />
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.Expressions.xaml" />-->
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.FixedDocumentViewers.xaml" />-->
+
+        <!-- Requires: Telerik.Windows.Controls.Input -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.GridView.xaml" />
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.ImageEditor.xaml" />-->
+
+        <!-- Requires: Telerik.Windows.Controls.Input, Telerik.Windows.Controls.Navigation -->
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.RibbonView.xaml" />-->
+
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.RichTextBoxUI.xaml" />-->
+
+        <!-- Requires: System.Windows, Telerik.Windows.Controls.Input, Telerik.Windows.Controls.Navigation -->
+        <!--<ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Controls.ScheduleView.xaml" />-->
+
+        <!-- Requires: Telerik.Windows.Controls.Input, Telerik.Windows.Controls.Navigation -->
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.Windows.Documents.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/Telerik.ReportViewer.Wpf.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/ImageResources.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/Themes/Windows8/CustomStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,85 @@
+﻿@model UserEditModel
+@{
+    var action = Html.ActionName();
+    ViewBag.Title = Localizer.GetString(action, typeof(UiResources)) + " " + UiResources.User;
+}
+<div id="userForm" class="span-16 @action-from">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    if (!action.EqualsOp(Operation.Create))
+    {
+        @Html.HiddenFor(x => x.Target.Id)
+        @Html.HiddenFor(x => x.Target.PasswordHash)
+        @Html.HiddenFor(x => x.Target.PasswordSalt)
+        @Html.HiddenFor(x => x.Target.RowVersion)
+        @Html.HiddenFor(x => x.Target.LastLoginAt)
+        @Html.HiddenFor(x => x.Target.LastLoginIP)
+        @Html.HiddenFor(x => x.Target.LastLoginLocation)
+    }
+    if (action.EqualsOp(Operation.Delete))
+    {
+        @HtmlElements.UiMessage("highlight", "info", UiResources.Warning_DeleteConfirmation);
+    }
+
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@UiResources.User</legend>
+        <table class="details">
+            <tbody>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.FullName)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.FullName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.UserName)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.UserName)</td>
+            </tr>
+            @if (action.EqualsOp(Operation.Create) || action.EqualsOp(Operation.Edit))
+            { 
+                <tr>
+                    <td>@Html.LabelFor(x => x.Password)</td>
+                    <td><input type="password" id="Password" name="Password" value="@Model.Password"
+       data-val="true" data-val-required="@string.Format(MResources.Required_Invalid, MResources.Password)"
+       data-val-length-min="1" data-val-length-max="30" data-val-length="@string.Format(MResources.StringLength_Invalid, MResources.Password, 30, 1)" />
+                        <span class="field-validation-valid" data-valmsg-replace="true" data-valmsg-for="Password"/>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.Email)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.ContactInfo)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.ContactInfo)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Target.IsActive)</td>
+                <td>@Html.DisplayOrEditorFor(x => x.Target.IsActive)</td>
+            </tr>
+            <tr>
+                <td>@UiResources.RoleManagement</td>
+                <td>
+                    <table>
+                        <tr>
+                        @for (int i = 0; i < Model.RoleList.Count(); i++)
+                        {
+                            <td>
+                                @Html.DisplayOrEditorFor(x => x.RoleList[i])
+                            </td>
+                            if (i % 3 == 2)
+                            {
+                                @:</tr><tr>
+                            }
+                        }
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    @Html.RenderSubmit()
+}
+</div>

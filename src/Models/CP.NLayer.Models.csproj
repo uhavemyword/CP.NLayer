@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFFE5258-EBB7-44C0-8B5C-4AE3AC4B3EE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CP.NLayer.Models</RootNamespace>
+    <AssemblyName>CP.NLayer.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CheckListItem.cs" />
+    <Compile Include="Business\Dashboard\RoleModel.cs" />
+    <Compile Include="Business\Dashboard\DepartmentModel.cs" />
+    <Compile Include="Business\Department\DepartmentDisplayModel.cs" />
+    <Compile Include="Business\Department\DepartmentEditModel.cs" />
+    <Compile Include="Business\Login\LoginModel.cs" />
+    <Compile Include="Business\Role\RoleDisplayModel.cs" />
+    <Compile Include="Business\Role\RoleEditModel.cs" />
+    <Compile Include="Business\User\UserDisplayModel.cs" />
+    <Compile Include="Business\User\UserEditModel.cs" />
+    <Compile Include="Entities\Config.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="DisplayModelBase`1.cs" />
+    <Compile Include="DisplayModelBase.cs" />
+    <Compile Include="EditModelBase`1.cs" />
+    <Compile Include="PermissionEnum.cs" />
+    <Compile Include="UiResourceNames.cs">
+      <DependentUpon>UiResourceNames.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataErrorInfo.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="LocalizedDataAnnotations\CreditCard2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Date2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Digits2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Email2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\EqualTo2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\FileExtensions2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Integer2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Max2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Min2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Numeric2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Range2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Required2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\StringLength2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Url2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\UserName2Attribute.cs" />
+    <Compile Include="LocalizedDataAnnotations\Year2Attribute.cs" />
+    <Compile Include="EditModelBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MResourceNames.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MResourceNames.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UiResourceNames.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UiResourceNames.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="MResourceNames.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MResourceNames.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CP.NLayer.Common.csproj">
+      <Project>{c8ce491d-06c5-4f17-87df-06f778de24ac}</Project>
+      <Name>CP.NLayer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\CP.NLayer.Resources.csproj">
+      <Project>{492A470C-A1D2-457A-A427-39695E90487D}</Project>
+      <Name>CP.NLayer.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,37 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.ServiceModel"#>
+<#@ assembly name="$(SolutionDir)src\Service\Contracts\$(OutDir)CP.NLayer.Service.Contracts.dll"#>
+<#@ output extension=".config" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic"#>
+<#@ import namespace="System.Reflection"#>
+<#@ import namespace="System.ServiceModel"#>
+<!--
+// This .cs file was auto-generated using t4 template. do not edit it directly - edit the associated .tt file instead.
+//      Copyright (c) 2013 uhavemyword(at)gmail.com. All rights reserved.
+//      Created by Ben at 11/4/2013, updated at <#=  DateTime.Now.ToString()#> 
+-->
+    <services>
+<#
+            string assemblyName = "CP.NLayer.Service.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            Assembly assembly = Assembly.Load(assemblyName);
+            Type[] types = assembly.GetTypes();
+            List<string> excludeTypes = new List<string> { "IEntityService`1", "IDisplayModelService`1", "IEditModelService`1" };
+            foreach (Type t in types)
+            {
+                // Only search interface with ServiceContractAttribute
+                if (t.IsInterface && !excludeTypes.Any(x => x == t.Name) && t.GetCustomAttributes(typeof(ServiceContractAttribute), false).Count() > 0)
+                {
+					string className = t.Name.Remove(0, 1);
+                    string classFullName = "CP.NLayer.Service.Services." + className;
+#>
+      <service name="<#= classFullName #>">
+        <endpoint address="net.tcp://127.0.0.1:9200/NLayer/<#= className #>" binding="netTcpBinding" contract="<#= t.FullName #>"/>
+      </service>
+<#
+				}
+			}
+#>
+    </services>

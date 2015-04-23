@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="CP.NLayer.Client.WpfClient.Modules.Dashboard.Home.View"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:map ="clr-namespace:CP.NLayer.Client.WpfClient.Modules.Dashboard.UserMap"
+             xmlns:userDetails="clr-namespace:CP.NLayer.Client.WpfClient.Modules.Dashboard.UserDetails"
+             xmlns:department="clr-namespace:CP.NLayer.Client.WpfClient.Modules.Dashboard.Department"
+             xmlns:l="http://wpflocalizeextension.codeplex.com"
+             l:LocalizeDictionary.DesignCulture="en"
+             l:ResxLocalizationProvider.DefaultAssembly="CP.NLayer.Resources"
+             l:ResxLocalizationProvider.DefaultDictionary="UiResources"
+             mc:Ignorable="d">
+    <HeaderedContentControl Header="{l:Loc Dashboard}">
+        <telerik:RadDocking x:Name="Docking" BorderThickness="0">
+            <telerik:RadDocking.DocumentHost>
+                <telerik:RadSplitContainer>
+                    <telerik:RadPaneGroup>
+                        <telerik:RadPane Header="{l:Loc WorkingArea}">
+                            <map:View />
+                        </telerik:RadPane>
+                    </telerik:RadPaneGroup>
+                </telerik:RadSplitContainer>
+            </telerik:RadDocking.DocumentHost>
+
+            <telerik:RadSplitContainer Orientation="Vertical" InitialPosition="DockedLeft">
+                <telerik:RadPaneGroup telerik:ProportionalStackPanel.RelativeSize="150, 100">
+                    <telerik:RadPane Header="{l:Loc Departments}">
+                        <department:View />
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+            <telerik:RadSplitContainer InitialPosition="DockedRight">
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="{l:Loc UserDetails}">
+                        <userDetails:View />
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+        </telerik:RadDocking>
+    </HeaderedContentControl>
+</UserControl>

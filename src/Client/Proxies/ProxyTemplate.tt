@@ -1,0 +1,150 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ include file="Manager.ttinclude"#>
+<#@ assembly name="System.ServiceModel"#>
+<#@ assembly name="$(SolutionDir)src\Common\$(OutDir)CP.NLayer.Common.dll"#>
+<#@ assembly name="$(SolutionDir)src\Service\Contracts\$(OutDir)CP.NLayer.Service.Contracts.dll"#>
+<#@ output extension=".txt" #>
+<#@ import namespace="System.Collections.Generic"#>
+<#@ import namespace="System.Reflection"#>
+<#@ import namespace="System.ServiceModel"#>
+<#@ import namespace="CP.NLayer.Common"#>
+
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+
+ <# manager.StartHeader(); #>
+// ------------------------------------------------------------------------------------
+// This .cs file was auto-generated using t4 template. do not edit it directly - edit the associated .tt file instead.
+//      Copyright (c) 2012 uhavemyword(at)gmail.com. All rights reserved.
+//      Created by Ben at 12/26/2012 
+// ------------------------------------------------------------------------------------
+
+namespace CP.NLayer.Client.Proxies
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.ServiceModel;
+    using System.Text;
+    using CP.NLayer.Service.Contracts;
+    using CP.NLayer.Models.Business;
+    using CP.NLayer.Models.Entities;
+
+<# manager.EndBlock(); #>
+
+<# manager.StartFooter(); #>
+}
+<# manager.EndBlock(); #>
+
+ <#
+            string assemblyName = "CP.NLayer.Service.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            Assembly assembly = Assembly.Load(assemblyName);
+            Type[] types = assembly.GetTypes();
+            List<string> excludeTypes = new List<string> { "IEntityService`1", "IDisplayModelService`1", "IEditModelService`1" };
+            foreach (Type t in types)
+            {
+                // Only search interface with ServiceContractAttribute
+                if (t.IsInterface && !excludeTypes.Any(x => x == t.Name) && t.GetCustomAttributes(typeof(ServiceContractAttribute), false).Count() > 0)
+                {
+                    string className = t.Name.Remove(0, 1) + "Proxy";
+#>
+<# manager.StartNewFile(className + ".cs" ); #>
+    public partial class <#= string.Format("{0} : ClientBase<{1}>, {1}", className, t.Name) #>
+    {
+        #region ctor
+        public <#= className #>()
+        {
+			this.Open();
+        }
+
+        public <#= className #>(string endpointConfigurationName) :
+            base(endpointConfigurationName)
+        {
+			this.Open();
+        }
+
+        public <#= className #>(string endpointConfigurationName, string remoteAddress) :
+            base(endpointConfigurationName, remoteAddress)
+        {
+			this.Open();
+        }
+
+        public <#= className #>(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+            base(endpointConfigurationName, remoteAddress)
+        {
+			this.Open();
+        }
+
+        public <#= className #>(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+            base(binding, remoteAddress)
+        {
+			this.Open();
+        }
+        #endregion
+
+        #region <#= t.Name #>
+<#
+                    List<Type> interfaces = new List<Type> { t };
+
+                    // Add the "base" interface
+                    interfaces.AddRange(t.GetInterfaces().AsEnumerable());
+
+                    var methodDic = new Dictionary<string, MethodInfo>();
+
+                    foreach (Type i in interfaces)
+                    {
+                        MethodInfo[] ms = i.GetMethods();
+                        foreach (MethodInfo m in ms)
+                        {
+                            var signature = m.GetSignature();
+                            if(!methodDic.Keys.Contains(signature))
+                            {
+                                methodDic.Add(m.GetSignature(), m);
+                            }
+                        }
+                    }
+
+                    foreach (var m in methodDic.Values)
+                    {
+#>
+        <#=m.GetSignature()#>
+        {
+<#
+                        string prefix = "";
+                        if (MethodInfoExtensions.TypeName(m.ReturnType) != "void")
+                        {
+                            prefix = "var result = ";
+                        }
+#>
+            <#=prefix + "Channel." + m.GetSignature(true)#>;
+            try
+            {
+                if (this.State != System.ServiceModel.CommunicationState.Faulted)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                this.Abort();
+            }
+<#
+                        if (MethodInfoExtensions.TypeName(m.ReturnType) != "void")
+                        {
+#>
+            return result;
+<#
+                        }
+#>
+        }
+
+<#
+                    }
+#>
+        #endregion
+    }
+<#
+                    manager.EndBlock(); 
+                }
+            }
+ #>
+<# manager.Process(true); #>

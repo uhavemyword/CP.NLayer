@@ -1,0 +1,11 @@
+﻿@helper Css(string name)
+{
+    <link href="@Url.Content("~/Content/" + name)" rel="stylesheet" type="text/css" />
+}
+@Css("themes/base/jquery-ui.css")
+@Css("Blueprint/screen.css")
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="@Url.Content("~/Content/Blueprint/ie.css")" type="text/css" media="screen, projection" />
+<![endif]-->
+@Css("DataTables-1.9.4/media/css/demo_table_jui.css")
+@Css("my.css")

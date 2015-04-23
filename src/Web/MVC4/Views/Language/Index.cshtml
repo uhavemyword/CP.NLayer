@@ -1,0 +1,13 @@
+﻿@model IEnumerable<SelectListItem>
+
+<div id="language" style="text-align:right">
+    @Html.DropDownList("lang", Model)
+</div>
+
+<script type='text/javascript'>
+    $(document).ready(function () {
+        $('#lang').change(function () {
+            $.post('@Url.Action("Change", "Language")', { lang: $(this).val() }, function () { location.reload(true); });
+        });
+    });
+</script>

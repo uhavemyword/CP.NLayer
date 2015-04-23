@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D493823D-89BD-4D51-8A1E-8D25AA359DDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CP.NLayer.Client.WpfClient.Resources</RootNamespace>
+    <AssemblyName>CP.NLayer.Client.WpfClient.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Reporting">
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.Wpf">
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.ReportViewer.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Rtf, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.FormatProviders.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Proofing.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.DataGrid, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Proofing.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.RadGridView, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Proofing.RadGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2014.1.331.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Telerik\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DesignTimeResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\CustomStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\ImageResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\System.Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.ReportViewer.Wpf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.Data.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.Docking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.GridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.Input.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.Navigation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Windows8\Telerik.Windows.Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\0.Description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\address_book_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\alert_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\anchor_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\asterisk_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\attach_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\basket_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\bookmark_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\briefcase_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\browser_window_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\buildings_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\cal_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\calculator_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\camera_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\cancel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\card_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\cardfile_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\cart_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\cd_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\check_mark_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\clipboard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\clock_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\comment_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\compress_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\contrast_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\database_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\delete_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\document_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\door_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\down_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\download_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\downloads_folder_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\edit_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\error_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\expand_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\file_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\film_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\filter_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\flag_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\flash_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\folder_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\gear_wheel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\globe_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\hard_disk_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\heart_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\help_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\house_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\info_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\iphone_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\ipod_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\key_2_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\key_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\keyboard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\layout_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\left_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\lens_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\line_chart_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\line_graph_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\link_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\lock_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\magic_wand_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\mail_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\mobile_phone_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\monitor_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\mouse_pointer_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\move_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\music_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\network_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\newspaper_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\no_sound_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\note_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\notebook_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\picture_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\pill_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\print_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\push_pin_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\puzzle_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\redo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\remove_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\remove_favourite_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\right_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_down_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_left_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_ok_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_remove_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_right_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\round_up_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\rss_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\save_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\scissors_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\script_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\server_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\shield_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\signs_man_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\signs_woman_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\sound_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\star_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\stop_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\tab_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\table_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\tag_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\text_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\toolbox_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\trackback_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\trash_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\tune_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\undo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\unlock_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\up_arrow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\user_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\warning_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\workflow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\wrench_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\zoom_in_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\iconza\zoom_out_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Windows8\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CP.NLayer.Client.WpfClient.Common.csproj">
+      <Project>{0c7f50e5-b37f-4d11-8edc-5a2de688b299}</Project>
+      <Name>CP.NLayer.Client.WpfClient.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

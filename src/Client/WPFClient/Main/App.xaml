@@ -1,0 +1,13 @@
+﻿<Application x:Class="CP.NLayer.Client.WpfClient.Main.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+
+        <!--The MergedDictionaries will be reset in runtime (GlobalCommands.ApplyTheme). However, we need them here to support design time.-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/CP.NLayer.Client.WpfClient.Resources;component/DesignTimeResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,8 @@
+﻿@model CP.NLayer.Models.Business.CheckListItem
+<span title="@Model.Description">
+    @Html.DisplayFor(model => model.Checked)    
+    @Html.LabelFor(model =>model.Checked, Model.Text)
+    @Html.HiddenFor(model =>model.Value)
+    @Html.HiddenFor(model =>model.Text)
+    @Html.HiddenFor(model =>model.Description)
+</span>

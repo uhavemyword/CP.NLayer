@@ -1,0 +1,29 @@
+﻿<telerik:RadWindow x:Class="CP.NLayer.Client.WpfClient.Common.MessageWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:l="http://wpflocalizeextension.codeplex.com"
+             l:ResxLocalizationProvider.DefaultAssembly="CP.NLayer.Resources" l:ResxLocalizationProvider.DefaultDictionary="UiResources"
+            xmlns:common="clr-namespace:CP.NLayer.Client.WpfClient.Common"
+            Padding="8" mc:Ignorable="d" Height="150" Width="300"
+            WindowStartupLocation="CenterOwner" SizeToContent="True" HideMaximizeButton="True" HideMinimizeButton="True" Loaded="RadWindow_Loaded">
+    <telerik:RadWindow.Resources>
+        <Style TargetType="common:MessageWindow" BasedOn="{StaticResource RadWindowStyle}" />
+    </telerik:RadWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="Auto" />
+            <RowDefinition Height ="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="{StaticResource Image_Check}" Width="24" Margin="10" />
+            <TextBlock x:Name="_messageTextBlock" Text="message" TextWrapping="Wrap" Width="230" VerticalAlignment="Center" />
+        </StackPanel>
+        <Border Grid.Row="1" Height="1" Margin="-8 0 -8 0" VerticalAlignment="Top" Background="LightGray" />
+        <telerik:RadButton x:Name="_closeButton" Grid.Row="1" Content="{l:Loc Close}" MinWidth="70"  Margin="0 10 0 0"
+                           VerticalAlignment="Center" HorizontalAlignment="Right" Click="ClosedButton_Click" IsDefault="True" />
+    </Grid>
+</telerik:RadWindow>

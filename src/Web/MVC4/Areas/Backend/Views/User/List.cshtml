@@ -1,0 +1,32 @@
+﻿@model List<UserDisplayModel>
+@{
+    var modelItem = Model.FirstOrDefault();           
+}
+
+<table id="@Html.PrefixControllerName("List")" class="client-side-table list display">
+	<thead>
+		<tr>
+            <th></th>
+			<th>@Html.LabelFor(model => modelItem.Id)</th>
+            <th>@Html.LabelFor(model => modelItem.UserName)</th>
+            <th>@Html.LabelFor(model => modelItem.FullName)</th>
+			<th>@Html.LabelFor(model => modelItem.RoleNames)</th>
+			<th>@Html.LabelFor(model => modelItem.IsActive)</th>
+            <th></th>
+		</tr>
+	</thead>
+	<tbody>
+	@foreach (var item in Model)
+	{
+		<tr row-id="@item.Id">
+            <td></td>
+            <td>@Html.DisplayFor(model => item.Id)</td>
+            <td>@Html.DisplayFor(model => item.UserName)</td>
+            <td>@Html.DisplayFor(model => item.FullName)</td>
+            <td>@Html.DisplayFor(model => item.RoleNames)</td>
+            <td>@Html.DisplayFor(model => item.IsActive)</td>
+			<td>@HtmlElements.RudDialogLinks(Html, item.Id)</td>
+		</tr>
+	}
+	</tbody>
+</table>

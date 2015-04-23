@@ -1,0 +1,56 @@
+﻿<Window x:Class="CP.NLayer.Client.WpfClient.Common.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:CP.NLayer.Client.WpfClient.Common;assembly=CP.NLayer.Client.WpfClient.Common"
+        xmlns:l="http://wpflocalizeextension.codeplex.com"
+        l:ResxLocalizationProvider.DefaultAssembly="CP.NLayer.Resources"
+        l:ResxLocalizationProvider.DefaultDictionary="UiResources"
+        Title="Registration" Height="350" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="15">
+        <Grid.Resources>
+            <Style TargetType="TextBox" BasedOn="{StaticResource EditViewTextBoxStyle}" />
+            <Style TargetType="TextBlock" BasedOn="{StaticResource EditViewTextBlockStyle}" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" x:Name="TitleTextBlock" Text="Expired" HorizontalAlignment="Left" Margin="0 5 0 10" FontSize="26" />
+        <RichTextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsReadOnly="True" BorderThickness="0" Margin="0 5">
+            <FlowDocument>
+                <Paragraph>
+                    Thank you for choosing our product. Your valid trial/registration period is about to expire or has now expired.
+                    You must obtain a valid unlock code to continue using this application.
+                    <LineBreak />
+                    Please call xxxx. at
+                    <Bold FontSize="14">000-000-000</Bold> if you are interested in purchasing
+                    or renewing your subscription.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Serial Number" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Registration Code" />
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="SerialNumberTextBox" IsReadOnly="True" IsHitTestVisible="True" />
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="RegistrationCodeTextBox" />
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
+            <StackPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+                    <Setter Property="Width" Value="80" />
+                    <Setter Property="Height" Value="24" />
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="RegisterButton" Content="Register" Margin="0 0 10 0" Click="RegisterButton_Click" />
+            <Button x:Name="TrialButton" Content="Close" Click="TrialButton_Click" />
+            <Button x:Name="CancelButton" Content="Cancel" Visibility="Collapsed" Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

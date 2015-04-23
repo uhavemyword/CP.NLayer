@@ -1,0 +1,30 @@
+﻿@helper Script(string name)
+{
+    <script src="@Url.Content("~/Scripts/" + name)" type="text/javascript"></script>
+}
+<script type="text/javascript">
+    var local = {};
+    local.Ok = "@UiResources.Ok";
+    local.Edit = "@UiResources.Edit";
+    local.Save = "@UiResources.Save";
+    local.Cancel = "@UiResources.Cancel";
+    local.Close = "@UiResources.Close";
+    local.Confirm = "@UiResources.Confirm";
+    local.DeleteConfirm = "@UiResources.Warning_DeleteConfirmation";
+    local.jQueryDataTableLanguageUrl = '@Url.Content("~/Scripts/DataTables.language.")' + '@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower()' + '.txt';
+
+    var consts = {};
+    consts.AjaxSuccess = "@Consts.AjaxSuccess";
+</script>
+
+@Script("jquery-1.8.2.min.js")
+@Script("jquery.livequery.min.js")
+@Script("jquery-ui-1.8.24.min.js")
+@Script("DataTables-1.9.4/media/js/jquery.dataTables.js")
+@Script("jquery.unobtrusive-ajax.min.js")
+@Script("jquery.validate.min.js")
+@Script("jquery.validate.unobtrusive.min.js")
+@Script("jquery.validate.extend.js")
+@Script("jquery.validate.messages." + System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() + ".js")
+@Script("my.js")
+@Script("translate.js")

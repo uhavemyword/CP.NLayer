@@ -1,0 +1,53 @@
+﻿<Window x:Class="CP.NLayer.Client.WpfClient.Main.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        Title="TestWindow" Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Background" Value="White" />
+            </Style>
+        </Grid.Resources>
+        <!--http://www.telerik.com/help/wpf/common-styles-appearance-colorizing-metro-theme.html-->
+        <Border Grid.Row="0" Grid.Column="0" Background="{telerik:Windows8Resource ResourceKey=AccentBrush}">
+            <TextBlock Text="AccentBrush" />
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" Background="{telerik:Windows8Resource ResourceKey=BasicBrush}">
+            <TextBlock Text="BasicBrush" />
+        </Border>
+        <Border Grid.Row="0" Grid.Column="2" Background="{telerik:Windows8Resource ResourceKey=MainBrush}">
+            <TextBlock Text="MainBrush" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Background="{telerik:Windows8Resource ResourceKey=MarkerBrush}">
+            <TextBlock Text="MarkerBrush" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Background="{telerik:Windows8Resource ResourceKey=QualityGoodBrush}">
+            <TextBlock Text="QualityGoodBrush" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2" Background="{telerik:Windows8Resource ResourceKey=QualityPoorBrush}">
+            <TextBlock Text="QualityPoorBrush" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0" Background="{telerik:Windows8Resource ResourceKey=QualitySatisfactoryBrush}">
+            <TextBlock Text="QualitySatisfactoryBrush" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" Background="{telerik:Windows8Resource ResourceKey=StrongBrush}">
+            <TextBlock Text="StrongBrush" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2" Background="{telerik:Windows8Resource ResourceKey=ValidationBrush}">
+            <TextBlock Text="ValidationBrush" />
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,37 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="$(SolutionDir)src\Resources\$(OutDir)CP.NLayer.Resources.dll"#>
+<#@ import namespace="System.Collections.Generic"#>
+<#@ import namespace="System.Reflection"#>
+// ----------------------------------------------------------------------------------------------------
+// This .cs file was generated using t4. do not edit it directly--edit the associated .tt file instead.
+// ----------------------------------------------------------------------------------------------------
+
+<#
+    List<string> names = new List<string>();
+    var assemblyName = "CP.NLayer.Resources, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+	var assembly = Assembly.Load(assemblyName);
+	var type = assembly.GetType("CP.NLayer.Resources.UI.UiResources"); 
+    var properties = type.GetProperties();
+    foreach (var property in properties)
+    {
+        if (property.PropertyType == typeof(string))
+        {
+            names.Add(property.Name);
+        }
+    }
+#>
+namespace CP.NLayer.Models
+{
+    public class UiResourceNames
+    {
+<#
+	foreach(var name in names)
+	{
+#>
+        public const string <#=name#> = "<#=name#>";
+<#
+	}
+#>
+    }
+}

@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="Image_Logo" UriSource="Images/logo.png" />
+
+    <BitmapImage x:Key="Image_Add" UriSource="Images/iconza/add_24x24.png" />
+    <BitmapImage x:Key="Image_Edit" UriSource="Images/iconza/edit_24x24.png" />
+    <BitmapImage x:Key="Image_Cancel" UriSource="Images/iconza/cancel_24x24.png" />
+    <BitmapImage x:Key="Image_Delete" UriSource="Images/iconza/delete_24x24.png" />
+    <BitmapImage x:Key="Image_Save" UriSource="Images/iconza/save_24x24.png" />
+    <BitmapImage x:Key="Image_Refresh" UriSource="Images/iconza/flash_24x24.png" />
+    <BitmapImage x:Key="Image_Print" UriSource="Images/iconza/print_24x24.png" />
+    <BitmapImage x:Key="Image_Clone" UriSource="Images/iconza/magic_wand_24x24.png" />
+    <BitmapImage x:Key="Image_Check" UriSource="Images/iconza/check_mark_24x24.png" />
+    <BitmapImage x:Key="Image_UpArrow" UriSource="Images/iconza/up_arrow_24x24.png" />
+    <BitmapImage x:Key="Image_DownArrow" UriSource="Images/iconza/down_arrow_24x24.png" />
+    <BitmapImage x:Key="Image_LeftArrow" UriSource="Images/iconza/left_arrow_24x24.png" />
+    <BitmapImage x:Key="Image_RightArrow" UriSource="Images/iconza/right_arrow_24x24.png" />
+    <BitmapImage x:Key="Image_MoveArrow" UriSource="Images/iconza/move_24x24.png" />
+</ResourceDictionary>

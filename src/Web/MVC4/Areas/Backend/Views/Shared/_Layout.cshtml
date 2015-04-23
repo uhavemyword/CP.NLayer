@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Html.Partial("_BECss")
+    @Html.Partial("_BEScripts")
+    @RenderSection("Header", false)
+</head>
+<body class="container">
+    <div>@DateTime.Now</div>
+    @Html.Action("UserInfo", "Account")
+    @Html.Action("Index", "Language", new { area = "" })
+    <ul>
+        <li><a href="@Url.Action(string.Empty, string.Empty)/">@UiResources.AppName</a></li>
+        <li><a href="@Url.Action(string.Empty, "user")/">@UiResources.UserManagement</a></li>
+        <li><a href="@Url.Action(string.Empty, "role")/">@UiResources.RoleManagement</a></li>
+    </ul>
+    @RenderBody()
+    @RenderSection("FooterScripts", false)
+</body>
+</html>

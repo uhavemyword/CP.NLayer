@@ -1,0 +1,28 @@
+﻿@model List<RoleDisplayModel>
+@{
+    var modelItem = Model.FirstOrDefault().Target;
+}
+
+<table id="@Html.PrefixControllerName("List")" class="client-side-table list display">
+    <thead>
+        <tr>
+            <th></th>
+            <th>@Html.LabelFor(model => modelItem.Id)</th>
+            <th>@Html.LabelFor(model => modelItem.Name)</th>
+            <th>@Html.LabelFor(model => modelItem.Description)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr row-id="@item.Target.Id">
+                <td></td>
+                <td>@Html.DisplayFor(model => item.Target.Id)</td>
+                <td>@Html.DisplayFor(model => item.Target.Name)</td>
+                <td>@Html.DisplayFor(model => item.Target.Description)</td>
+                <td>@HtmlElements.RudDialogLinks(Html, item.Target.Id)</td>
+            </tr>
+        }
+    </tbody>
+</table>

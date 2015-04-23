@@ -1,0 +1,39 @@
+﻿<telerik:RadWindow x:Class="CP.NLayer.Client.WpfClient.Common.ProgressWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+            xmlns:c="clr-namespace:CP.NLayer.Client.WpfClient.Common"
+            c:MyAttachedProperties.WindowDialogResult="{Binding DialogResult}"
+             xmlns:l="http://wpflocalizeextension.codeplex.com"
+             l:LocalizeDictionary.DesignCulture="en"
+             l:ResxLocalizationProvider.DefaultAssembly="CP.NLayer.Resources"
+             l:ResxLocalizationProvider.DefaultDictionary="UiResources"
+             mc:Ignorable="d"
+             d:DesignHeight="150" d:DesignWidth="350"
+             HideMaximizeButton="True" HideMinimizeButton="True"
+             Header="{Binding Title}" Width="350">
+    <telerik:RadWindow.Resources>
+        <Style TargetType="c:ProgressWindow" BasedOn="{StaticResource RadWindowStyle}" />
+    </telerik:RadWindow.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding Message}" TextWrapping="Wrap" />
+        <telerik:RadProgressBar Grid.Row="1" Minimum="0" Maximum="100" Margin="0 5"
+					Value="{Binding Percent}" />
+        <TextBlock Grid.Row="2" Text="{Binding PercentFormatString}" Margin="0 5" />
+        <TextBlock Grid.Row="3" Text="{Binding CompleteMessage}" TextWrapping="Wrap" Margin="0 5"
+                   Visibility="{Binding CompleteMessage, Converter={StaticResource StringToVisibilityConverter}}" />
+        <c:ValidationMessageControl Grid.Row="4" />
+        <telerik:RadButton  Grid.Row="5" Content="{l:Loc Ok}" HorizontalAlignment="Right" MinWidth="70"
+                            Click="RadButton_Click" IsEnabled="{Binding IsFinished}" />
+    </Grid>
+</telerik:RadWindow>

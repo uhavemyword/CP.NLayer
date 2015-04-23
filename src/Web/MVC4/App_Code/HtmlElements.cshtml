@@ -1,0 +1,92 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Linq.Expressions;
+@using System.Text;
+@using System.Web;
+@using System.Web.Mvc;
+@using System.Web.Mvc.Html;
+@using System.Web.Routing;
+@using CP.NLayer.Resources.UI;
+@using CP.NLayer.Web.Mvc4.Common;
+
+@helper UiIcon(string iconLastName, string title)
+	{
+	<div class="my-small-icon ui-state-default ui-corner-all" title="@title">
+		<span class="ui-icon ui-icon-@iconLastName">@title</span>
+	</div>
+}
+
+@*uiState: highlight/error*@
+@helper UiMessage(string uiState, string iconLastName, string innerHtml)
+	{
+	<div class="ui-state-@uiState ui-corner-all">
+		<span class="ui-icon ui-icon-@iconLastName"></span>
+		@innerHtml
+	</div>
+}
+
+@helper CrudDialogLink(System.Web.Mvc.HtmlHelper Html, string innerHtml, Operation opType, object routeValues, string cssClass = "")
+	{
+		var urlHelper = new UrlHelper(Html.ViewContext.RequestContext);
+		var url = urlHelper.Action(opType.ToString(), new RouteValueDictionary(routeValues));
+	<a href="@url" dialog-type="crud-dialog" operation-type="@opType.ToString().ToLower()"
+		update-target="@Html.PrefixControllerName("ListContainer")" class="@cssClass">
+		@Html.Raw(innerHtml)
+	</a>
+}
+
+@helper RudDialogLinks(System.Web.Mvc.HtmlHelper Html, long id)
+{
+
+	@CrudDialogLink(Html, UiIcon("newwin", UiResources.Details).ToHtmlString(), Operation.Details, new { id = id })
+	@CrudDialogLink(Html, UiIcon("pencil", UiResources.Edit).ToHtmlString(), Operation.Edit, new { id = id })
+	@CrudDialogLink(Html, UiIcon("trash", UiResources.Delete).ToHtmlString(), Operation.Delete, new { id = id })
+}
+
+@helper ListContainer(System.Web.Mvc.HtmlHelper Html)
+	{
+		var urlHelper = new UrlHelper(Html.ViewContext.RequestContext);
+		string updateTarget = Html.PrefixControllerName("ListContainer");
+
+	<div class="table-toolbar">
+@*		<input type="checkbox" id="@Html.PrefixControllerName("SelectAll")" class="select-all" update-target="@updateTarget" />
+    <label for="@Html.PrefixControllerName("SelectAll")" class="button">@UiResources.SelectAll</label>
+    <a href="@urlHelper.Action("DeleteSelected")" update-target="@updateTarget" class="delete-selected button">
+        @UiResources.DeleteSelected
+    </a>*@
+		@CrudDialogLink(Html, UiResources.Create, Operation.Create, null, "button")
+	</div>
+	<div id="@updateTarget" data-source="@urlHelper.Action("list")/" class="table-container">
+	</div>
+}
+
+@helper InfoDialog(System.Web.Mvc.HtmlHelper Html, string linkInnerHtml, string content)
+	{
+		Guid guid = Guid.NewGuid();
+   <a href="#" dialog-type="info-dialog" target-content="@guid">@Html.Raw(linkInnerHtml)</a>
+   <div id="@guid" class="info-dialog-content">@Html.Raw(content)</div>
+}
+
+@helper LanguageRow(System.Web.Mvc.HtmlHelper Html, string rootId)
+{
+	var action = Html.ActionName();
+	if (rootId != null && (action.EqualsOp(Operation.Create) || action.EqualsOp(Operation.Edit)))
+	{
+		<tr>
+			<td></td>
+			<td><input type="button" value="@UiResources.Chinese" class="button"
+				onclick="FindAndTranslateToZh('@rootId')" /></td>
+			<td><input type="button" value="@UiResources.English" class="button"
+				onclick="FindAndTranslateToEn('@rootId')" /></td>
+		</tr>
+	}
+	else
+	{
+		<tr>
+			<td></td>
+			<td>@UiResources.Chinese</td>
+			<td>@UiResources.English</td>
+		</tr>
+	}
+}

@@ -1,0 +1,102 @@
+#loading
+{
+    background-image: url(images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ui-resizable-se
+{
+    bottom: 13px;
+}
+
+.processing
+{
+    cursor: progress;
+}
+
+/*jQuery ui size*/
+.ui-widget
+{
+    font-family: "Helvetica Neue" , Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+div.table-toolbar
+{
+}
+
+div.table-toolbar .button
+{
+    margin: .3em 0 .3em 0;
+}
+
+div.my-small-icon
+{
+    cursor: pointer;
+    float: left;
+    list-style: none outside none;
+    margin: 0 1px 0 1px;
+    padding: 2px;
+    position: relative;
+}
+
+div.ui-state-highlight, div.ui-state-error
+{
+    padding: .8em;
+    margin: .8em 0 .8em 0;
+}
+
+div.ui-state-highlight > span.ui-icon, div.ui-state-error > span.ui-icon
+{
+    float: left;
+    margin-right: .3em;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field,
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+/*
+.text-box {
+    width: 30em;
+}
+*/
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}

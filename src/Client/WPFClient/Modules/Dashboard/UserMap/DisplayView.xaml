@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="CP.NLayer.Client.WpfClient.Modules.Dashboard.UserMap.DisplayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <telerik:RadMap Grid.Row="1" Name="_radMap"
+                                        ZoomLevel="7"
+                                        Center="0,0"
+                                        UseDefaultLayout="False"
+                                        MouseDragMode="Drag"
+                                        MouseClickMode="SelectItem"
+                                        MouseDoubleClickMode="None"
+                                        IsMouseWheelZoomEnabled="False"
+                                        IsKeyboardNavigationEnabled="False">
+            <telerik:RadMap.Provider>
+                <telerik:EmptyProvider />
+            </telerik:RadMap.Provider>
+            <telerik:InformationLayer Name="_layer" ShapeFill="{StaticResource ShapeFill}">
+            </telerik:InformationLayer>
+        </telerik:RadMap>
+
+        <TextBox x:Name="_captionTextBox"  VerticalAlignment="Top" HorizontalAlignment="Center"
+                Foreground="White" Background="Transparent" IsHitTestVisible="False" BorderThickness="0" />
+    </Grid>
+</UserControl>
